@@ -1,0 +1,13 @@
+com\it\garmentsclientapp\config\BootStrap.class
+com\it\garmentsclientapp\bean\GarmentsReportBean$2.class
+com\it\garmentsclientapp\config\Producers.class
+com\it\garmentsclientapp\entity\Garmentmaster.class
+com\it\garmentsclientapp\garments\GarmentsServlet.class
+com\it\garmentsclientapp\garments\GarmentsService.class
+com\it\garmentsclientapp\config\CrossOriginResourceSharingFilter.class
+com\it\garmentsclientapp\bean\GarmentsReportBean$1.class
+com\it\garmentsclientapp\bean\GarmentsReportBean.class
+com\it\garmentsclientapp\service\ExampleService.class
+com\it\garmentsclientapp\service\HealthCheckService.class
+com\it\garmentsclientapp\service\package-info.class
+com\it\garmentsclientapp\bean\GarmentsReportBean$3.class

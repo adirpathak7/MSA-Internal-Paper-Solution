@@ -1,0 +1,8 @@
+com\it\garmentsapp\service\HealthCheckService.class
+com\it\garmentsapp\entity\Garmentmaster.class
+com\it\garmentsapp\service\ExampleService.class
+com\it\garmentsapp\config\BootStrap.class
+com\it\garmentsapp\config\Producers.class
+com\it\garmentsapp\bean\GarmentsBean.class
+com\it\garmentsapp\config\CrossOriginResourceSharingFilter.class
+com\it\garmentsapp\service\package-info.class

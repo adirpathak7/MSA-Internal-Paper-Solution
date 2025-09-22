@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Garments</title>
+    </h:head>
+    <h:body>
+        Garments Data
+        <f:view>
+            <h:form>
+                <h1> <h:outputLabel value="Select Category"/> </h1>
+                <h:selectOneMenu value="#{garments.selectedCategory}">
+                    <f:selectItem itemValue="" itemLabel="Select the category"/>
+                    <f:selectItem itemValue="mens" itemLabel="Mens"/>
+                    <f:selectItem itemValue="women" itemLabel="Womens"/>
+                    <f:selectItem itemValue="children" itemLabel="Childrens"/>
+                </h:selectOneMenu>
+                <h:commandButton value="Search" action="#{garments.findByCategory}" />
+
+                <h1> <h:outputLabel value="Select Price"/> </h1>
+                <h:selectOneMenu value="#{garments.selectedPriceRange}">
+                    <f:selectItem itemValue="" itemLabel="Select the price"/>
+                    <f:selectItem itemValue="500-1000" itemLabel="₹500 - ₹1000" />
+                    <f:selectItem itemValue="1001-1500" itemLabel="₹1001 - ₹1500" />
+                    <f:selectItem itemValue="1501-99999" itemLabel="₹1500+" />
+                </h:selectOneMenu>
+
+                <h:commandButton value="Search" action="#{garments.filterPrice()}" />
+
+                <h1><h:outputText value="All Garments Data"/></h1>
+                <h:dataTable value="#{garments.listOfGarment}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="GarmentId"/>
+                        </f:facet>
+                        <h:outputText value="#{item.garmentId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="GarmentName"/>
+                        </f:facet>
+                        <h:outputText value="#{item.garmentName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Size"/>
+                        </f:facet>
+                        <h:outputText value="#{item.size}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Category"/>
+                        </f:facet>
+                        <h:outputText value="#{item.category}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Description"/>
+                        </f:facet>
+                        <h:outputText value="#{item.description}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Price"/>
+                        </f:facet>
+                        <h:outputText value="#{item.price}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Stock"/>
+                        </f:facet>
+                        <h:outputText value="#{item.stock}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+
+
+    </h:body>
+
+
+</html>
