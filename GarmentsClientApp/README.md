@@ -38,7 +38,7 @@ Make sure to replace DOCKER_HANDLE/IMAGE_NAME with actual values.
 - [http://localhost:8080/GarmentsClientApp/rest/example](http://localhost:8080/GarmentsClientApp/rest/example)
 - [health check url](http://localhost:8080/health)
 
-# Drop in replacement
+# Drop in replacement 
 
 The payara/server-full docker image en the ivonet/payara images are almost drop-in
 replacements of each other.
