@@ -21,7 +21,7 @@ The project starts out with a fully configured minimal JakartaEE 9 setup and Hel
 
 # Docker
 
-- The docker image is hosted:
+- The docker image is hosted: 
   - [ivonet/payara](http://ivo2u.nl/tM) / [GitHub](http://ivo2u.nl/oO)
   - [ivonet/glassfish](http://ivo2u.nl/tP) / [GitHub](http://ivo2u.nl/Vu)
 
