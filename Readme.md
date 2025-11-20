@@ -46,7 +46,7 @@ docker network create garmentsNet
 Run the **MySQL container** with **persistent storage** and **custom port mapping**:
 
 ```bash
-docker run -d --name msamysql --network garmentsNet -e MYSQL_ROOT_PASSWORD=adirp7 -v msaData:/var/lib/mysql -p 3305:3306 mysql:8.0
+docker run -d --name msamysql --network garmentsNet -e MYSQL_ROOT_PASSWORD=adirp7 -e MYSQL_DATABASE=msa -v msaData:/var/lib/mysql -p 3305:3306 mysql:8.0
 ```
 
 **Explanation:**
@@ -64,8 +64,10 @@ docker run -d --name msamysql --network garmentsNet -e MYSQL_ROOT_PASSWORD=adirp
 Access the **MySQL container shell:**
 
 ```
-docker exec -it msamysql mysql -uroot -padirp7
+mysql -h localhost -P 3406 -uroot -p
 ```
+Enter your password: (it will be invisible)
+
 Check existing databases:
 ```
 show databases;
@@ -93,7 +95,7 @@ ENV DEPLOY_DIR=/opt/payara/deployments
 RUN mkdir ${PAYARA_HOME}/config
 
 COPY --chown=payara:payara domain.xml ${PAYARA_HOME}/config/
-COPY --chown=payara:payara mysql.jar ${PAYARA_HOME}/config/config
+COPY --chown=payara:payara mysql.jar ${PAYARA_HOME}/config/
 
 USER payara
 WORKDIR ${PAYARA_HOME}
@@ -102,10 +104,7 @@ COPY artifact/GarmentsApp.war ${DEPLOY_DIR}/
 
 EXPOSE 8080
 
-CMD ["--addlibs","/opt/payara/config/mysql.jar",
-     "--deploymentDir","/opt/payara/deployments",
-     "--rootDir","/opt/payara/config",
-     "--domainConfig","/opt/payara/config/domain.xml"]
+CMD ["--addlibs","/opt/payara/config/mysql.jar","--deploymentDir","/opt/payara/deployments","--rootDir","/opt/payara/config","--domainConfig","/opt/payara/config/domain.xml"]
 ```
 
 **Explanation:**
@@ -133,7 +132,7 @@ Test API endpoint:
 http://garmentsresource:8080/GarmentsApp/app/api
 ```
 
-## Step 7: Client Application Dockerfile Setup
+## Step 7: Client Application Setup
 
 Update `microprofile-config.properties` in Client app:
 ```
