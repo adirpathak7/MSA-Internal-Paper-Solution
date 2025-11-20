@@ -59,13 +59,13 @@ Portions Copyright [2016-2018] [Payara Foundation and/or its affiliates]
 <jdbc-connection-pool name="mysqlpool"
     datasource-classname="com.mysql.cj.jdbc.MysqlDataSource"
     res-type="javax.sql.DataSource">
-    <property name="serverName" value="localhost"/>
+    <property name="serverName" value="msaMySQL"/>
     <property name="portNumber" value="3306"/>
     <property name="databaseName" value="msa"/>
     <property name="user" value="root"/>
     <property name="password" value="adirp7"/>
     <property name="useSSL" value="false"/>
-     <property name="allowPublicKeyRetrieval" value="true"/>
+    <property name="allowPublicKeyRetrieval" value="true"/>
     <property name="requireSSL" value="false"/>
     <property name="sslMode" value="DISABLED"/>
 </jdbc-connection-pool>
