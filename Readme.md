@@ -7,17 +7,17 @@ It includes a **MySQL database**, **Resource application**, and **Client applica
 
 ## 📑 Table of Contents
 
-- [Prerequisites](#-prerequisites)
-- [Step 1: Create Docker Network](#-step-1-create-docker-network)
-- [Step 2: MySQL Container Setup](#-step-2-mysql-container-setup)
-- [Step 3: Access and Configure MySQL](#-step-3-access-and-configure-mysql)
-- [Step 4: Export Database via phpMyAdmin](#-step-4-export-database-via-phpmyadmin)
-- [Step 5: Resource Application Dockerfile Setup](#-step-5-resource-application-dockerfile-setup)
-- [Step 6: Build and Deploy Resource Application](#-step-6-build-and-deploy-resource-application)
-- [Step 7: Client Application Dockerfile Setup](#-step-7-client-application-dockerfile-setup)
-- [Step 8: Build and Deploy Client Application](#-step-8-build-and-deploy-client-application)
-- [Step 9: Test Applications](#-step-9-test-applications)
-- [⚠️ Important Notes](#️-important-notes)
+- Prerequisites
+- Step 1: Create Docker Network
+- Step 2: MySQL Container Setup
+- Step 3: Access and Configure MySQL
+- Step 4: Export Database via phpMyAdmin
+- Step 5: Resource Application Dockerfile Setup
+- Step 6: Build and Deploy Resource Application
+- Step 7: Client Application Dockerfile Setup
+- Step 8: Build and Deploy Client Application
+- Step 9: Test Applications
+- ⚠️ Important Notes
 
 ---
 
@@ -162,14 +162,6 @@ Run Client container:
 docker run -d --name garmentsclientcon --network garmentsNet -p 8086:8080 garmentsclientimg
 ```
 
-## ⚠️ Important Notes
-
-- Remove old containers/volumes if DB creation fails.
-- Update JWT tokens and public key in Resource app if needed.
-- Docker image/container names must be lowercase.
-- Ensure `domain.xml` and mysql.jar exist and paths match Dockerfile configuration.
-- Ports `8085`, `8086`, `3305` should be free before deployment.
-
 ## Step 9: Test Applications
 
 - Resource API: http://localhost:8085/GarmentsApp/app/api
@@ -177,3 +169,11 @@ docker run -d --name garmentsclientcon --network garmentsNet -p 8086:8080 garmen
 - Client Servlet output: http://localhost:8086/GarmentsClientApp/GarmentsServlet
 
 **🎉 Congratulations!** Your Garments MSA application is fully deployed on Docker.
+
+## ⚠️ Important Notes
+
+- Remove old containers/volumes if DB creation fails.
+- Update JWT tokens and public key in Resource app if needed.
+- Docker image/container names must be lowercase.
+- Ensure `domain.xml` and mysql.jar exist and paths match Dockerfile configuration.
+- Ports `8085`, `8086`, `3305` should be free before deployment.
